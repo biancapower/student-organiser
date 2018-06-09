@@ -2,13 +2,25 @@
 const students = ["Alex", "Andres", "Andrew", "Ash", "Casey", "Cassandra", "Charles", "Chris B", "Chris F", "Chris L", "Dae", "Elouise", "Frank", "Hadi", "Jake", "James", "Jen", "Joseph", "Katie", "Lewis", "Luke", "Lux", "Maryna", "Mat", "Nick", "Punya", "Rafael", "Rhys", "Sam F", "Sam R"];
 
 // number of students per group
-const groupSize = 4;
+let groupSize = 4;
+
+// specify preference for larger or smaller groups when even numbers not possible
+const smallOrLarge = "small";
 
 // determine number of groups
-const numGroups = Math.floor(students.length / groupSize);
+let numGroups;
+
+if (smallOrLarge === "small") {
+    numGroups = Math.ceil(students.length / groupSize);
+    // makes code behave as though groups size is one less
+    // this allows rest of code to behave as if 'large' was selected
+    groupSize--;
+} else {
+    numGroups = Math.floor(students.length / groupSize);
+}
 
 // determine number of students remaining after even groups are made
-const studentsRemaining = students.length - (numGroups * groupSize);
+const studentsRemaining = Math.abs(students.length - (numGroups * groupSize));
 
 // create new array with names of students shuffled
 const shuffledStudents = shuffle(students);
@@ -39,11 +51,11 @@ function group(arrOfStudents, groupSize) {
         
     }
     
-    // assign remaining students to groups
+    // add remaining students evenly to groups
     for (let k = 0; arrOfStudents.length > 0; k++) {
         myGroups[k].push(arrOfStudents.pop());
     }
-
+    
     console.log(myGroups);
 
 }
