@@ -4,7 +4,7 @@ const students = ["Alex", "Andres", "Andrew", "Ash", "Casey", "Cassandra", "Char
 // number of students per group
 const groupSize = 3;
 
-// shuffle names of students
+// create new array with names of students shuffled
 const shuffledStudents = shuffle(students);
 
 // function to shuffle an array
@@ -14,6 +14,19 @@ function shuffle(a) {
         [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
+};
+
+function group(arrOfStudents, groupSize) {
+    // console.log(`Students: ${arrOfStudents}`);
+
+    let group1 = [];
+
+    for (i = 0; i < groupSize; i++) {
+        group1.push(arrOfStudents.pop());
+    }
+    
+    console.log(group1);
+    // console.log(`Students: ${arrOfStudents}`);
 }
 
-
+group(shuffledStudents, groupSize);
