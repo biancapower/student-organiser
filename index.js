@@ -14,7 +14,7 @@ function shuffle(a) {
         [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
-};
+}
 
 function group(arrOfStudents, groupSize) {
 
@@ -27,11 +27,11 @@ function group(arrOfStudents, groupSize) {
             group.push(arrOfStudents.pop());
         }
         
-        myGroups.push(`Group ${j + 1}: ${group}\n`);
+        myGroups.push(group);
         
     }
 
-    console.log(`My groups:\n${myGroups}`)
+    console.log(myGroups);
 
 }
 
