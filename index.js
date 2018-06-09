@@ -17,16 +17,22 @@ function shuffle(a) {
 };
 
 function group(arrOfStudents, groupSize) {
-    // console.log(`Students: ${arrOfStudents}`);
 
-    let group1 = [];
+    let myGroups = [];
 
-    for (i = 0; i < groupSize; i++) {
-        group1.push(arrOfStudents.pop());
+    for (j = 0; arrOfStudents.length > 0; j++) {
+        let group = [];
+
+        for (i = 0; i < groupSize; i++) {
+            group.push(arrOfStudents.pop());
+        }
+        
+        myGroups.push(`Group ${j + 1}: ${group}\n`);
+        
     }
-    
-    console.log(group1);
-    // console.log(`Students: ${arrOfStudents}`);
+
+    console.log(`My groups:\n${myGroups}`)
+
 }
 
 group(shuffledStudents, groupSize);
