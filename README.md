@@ -9,6 +9,9 @@
 ## Iteration 1
 - [ ] Store list of groups used in a session
 - [ ] Assign a name to a session
+
+- [ ] Tag a session, only compare across similarly tagged sessions
+
 - [ ] Create new list of groups for subsequent sessions, eliminating groups previously used
 - [ ] Specify % of non-overlap
     - [ ] 100% = students will not be in the same group as anyone they have been grouped with before
