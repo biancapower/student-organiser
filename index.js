@@ -1,3 +1,5 @@
+const Session = require('./models/Session');
+
 // names of all students
 const students = ["Alex", "Andres", "Andrew", "Ash", "Casey", "Cassandra", "Charles", "Chris B", "Chris F", "Chris L", "Dae", "Elouise", "Frank", "Hadi", "Jake", "James", "Jen", "Joseph", "Katie", "Lewis", "Luke", "Lux", "Maryna", "Mat", "Nick", "Punya", "Rafael", "Rhys", "Sam F", "Sam R"];
 
@@ -56,8 +58,32 @@ function group(arrOfStudents, groupSize) {
         myGroups[k].push(arrOfStudents.pop());
     }
     
-    console.log(myGroups);
+    return myGroups;
 
 }
 
-group(shuffledStudents, groupSize);
+const myGroups = group(shuffledStudents, groupSize);
+
+console.log(myGroups);
+
+console.log("Enter a session name to store this session: ");
+
+const stdin = process.openStdin();
+
+stdin.addListener("data", function(d) {
+    // note:  d is an object, and when converted to a string it will
+    // end with a linefeed.  so we (rather crudely) account for that  
+    // with toString() and then trim() 
+    // console.log("you entered: [" + 
+    //     d.toString().trim() + "]");
+
+    Session.create({
+        name: d.toString().trim(),
+        date: new Date(),
+        groups: myGroups,
+    }).then((session) => {
+        console.log(`You have saved the session ${session.name}`);
+    });
+
+});
+
