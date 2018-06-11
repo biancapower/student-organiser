@@ -4,10 +4,10 @@ const Session = require('./models/Session');
 const students = ["Alex", "Andres", "Andrew", "Ash", "Casey", "Cassandra", "Charles", "Chris B", "Chris F", "Chris L", "Dae", "Elouise", "Frank", "Hadi", "Jake", "James", "Jen", "Joseph", "Katie", "Lewis", "Luke", "Lux", "Maryna", "Mat", "Nick", "Punya", "Rafael", "Rhys", "Sam F", "Sam R"];
 
 // number of students per group
-let groupSize = 4;
+let groupSize = 3;
 
 // specify preference for larger or smaller groups when even numbers not possible
-const smallOrLarge = "small";
+const smallOrLarge = "large";
 
 // determine number of groups
 let numGroups;
@@ -83,9 +83,7 @@ function createBestGroups(students, groupSize, undesireablePairings) {
     // create new array with names of students shuffled
     const shuffledStudents = shuffle(students);
     let bestGroup = group(shuffledStudents, groupSize);
-    console.log("****");    
     let bestClashes = maxClashes(bestGroup, undesireablePairings);
-    console.log("+++");    
 
     let i = 0;
 
@@ -93,9 +91,7 @@ function createBestGroups(students, groupSize, undesireablePairings) {
         const shuffledStudents = shuffle(students);
         const thisGroup = group(shuffledStudents, groupSize);
         const clashes = maxClashes(thisGroup, undesireablePairings);
-        
-        // console.log(clashes);
-        
+                
         if (clashes < bestClashes) {
             bestGroup = thisGroup;
             bestClashes = clashes;            
@@ -103,7 +99,7 @@ function createBestGroups(students, groupSize, undesireablePairings) {
 
         i++;
     }
-    console.log(bestClashes, i);
+    console.log(`*********************\nNum clashes: ${bestClashes}, Rounds: ${i + 1}`);
     return bestGroup;
 }
 

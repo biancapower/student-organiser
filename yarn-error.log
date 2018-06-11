@@ -1,14 +1,14 @@
 Arguments: 
-  /Users/Bianca/.nvm/versions/node/v8.11.2/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js start
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js start
 
 PATH: 
-  /Users/Bianca/.nvm/versions/node/v8.11.2/bin:/Users/Bianca/Library/Android/sdk/platform-tools:/Users/Bianca/Library/Android/sdk/tools/bin:/Users/Bianca/Library/Android/sdk/tools:/Users/Bianca/.rvm/gems/ruby-2.4.1/bin:/Users/Bianca/.rvm/gems/ruby-2.4.1@global/bin:/Users/Bianca/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Bianca/.rvm/bin
+  /Users/Bianca/Library/Android/sdk/platform-tools:/Users/Bianca/Library/Android/sdk/tools/bin:/Users/Bianca/Library/Android/sdk/tools:/Users/Bianca/.rvm/gems/ruby-2.4.1/bin:/Users/Bianca/.rvm/gems/ruby-2.4.1@global/bin:/Users/Bianca/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Bianca/Library/Android/sdk/platform-tools:/Users/Bianca/Library/Android/sdk/tools/bin:/Users/Bianca/Library/Android/sdk/tools:/Users/Bianca/.rvm/gems/ruby-2.4.1/bin:/Users/Bianca/.rvm/gems/ruby-2.4.1@global/bin:/Users/Bianca/.rvm/rubies/ruby-2.4.1/bin:/Users/Bianca/.rvm/bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.11.2
+  9.8.0
 
 Platform: 
   darwin x64
@@ -151,7 +151,6 @@ Trace:
       at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
       at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
       at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at emitTwo (events.js:126:13)
-      at ChildProcess.emit (events.js:214:7)
-      at maybeClose (internal/child_process.js:925:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+      at ChildProcess.emit (events.js:180:13)
+      at maybeClose (internal/child_process.js:936:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
